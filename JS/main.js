@@ -40,3 +40,48 @@ let regularAnimation = (callBack) => {
 setInterval(() => {
     regularAnimation(rodFunction); // Call regularAnimation with rodFunction as callback
 }, 5000);
+
+
+// let innerHtmlTextWriter = () => {
+//     let halloText = "Hi There!"
+//     let introText = "My Name is Mohammad"
+//     let writeHallo = document.querySelector('.hi-text');
+//     let writeIntro = document.querySelector('.into-moh');
+
+
+
+// }
+
+// innerHtmlTextWriter()
+
+
+let innerHtmlTextWriter = () => {
+    let halloText = "Hi There!";
+    let introText = "My Name is Mohammad";
+    let writeHallo = document.querySelector('.hi-text');
+    let writeIntro = document.querySelector('.into-moh');
+
+    let halloIndex = 0; 
+    let introIndex = 0; 
+
+    function typeHallo() {
+        if (halloIndex < halloText.length) {
+            writeHallo.innerHTML += halloText.charAt(halloIndex);
+            halloIndex++;
+            setTimeout(typeHallo, 100);
+        }
+    }
+
+    function typeIntro() {
+        if (introIndex < introText.length) {
+            writeIntro.innerHTML += introText.charAt(introIndex);
+            introIndex++;
+            setTimeout(typeIntro, 100);
+        }
+    }
+
+    typeHallo();  
+    setTimeout(typeIntro, halloText.length * 150);  
+}
+
+innerHtmlTextWriter();

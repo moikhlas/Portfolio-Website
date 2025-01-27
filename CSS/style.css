@@ -13,6 +13,10 @@
     font-family: "Space Mono", serif;
 }
 
+body {
+    /* overflow-x: hidden; */
+}
+
 header {
     z-index: 10;
     width: 100vw;
@@ -48,27 +52,6 @@ header {
     background-color: black;
     border-radius: 50%;
 }
-.nav-links {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    list-style: none;
-}
-
-.nav-links li {
-    transition: all 0.2s ease-in;
-    padding: 0 0.5rem;
-    margin: 0 0.5rem;
-}
-
-.nav-links li:hover,
-.nav-links li:active {
-    color: rgb(255, 253, 253);
-}
-
-.cv {
-
-}
 
 .cv-link {
     text-decoration: none;
@@ -100,6 +83,8 @@ header {
     width: 100%;
     gap: 10px;
     margin: 20px 0;
+    overflow-x: hidden;
+
 }
 
 .header-text {
@@ -127,17 +112,58 @@ header {
     line-height: 2rem;
 }
 
+
 .mohammad-img {
-    /* background-color: white; */
+    position: relative; /* Make sure this container is positioned relative to its own space */
+    display: inline-block; /* Ensure the image takes up only as much space as needed */
+}
+
+.mohammad-img::after {
+    content: '';
+    width: 130%;
+    height: 150px; 
+    background: black;
+    position: absolute;
+    top: 25.55%;
+    right: -40%;
+    z-index: -1;
+    background: linear-gradient(90deg, hwb(245 17% 59% / 0.228), #30115ab6, #190531);  
+    animation-duration: 6500ms;
 }
 
 .mohammad-img::before {
-    content: '';  /* Required to generate the pseudo-element */
-  position: absolute;
-  width: 20%;  /* Sets the width of the black box */
-  height: 100px;  /* Sets the height of the black box */
-  background-color: black;  /* Sets the background color to black */
-  z-index: -1;  /* Ensures the box is placed behind the image */
-
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -40%;
+    width: 130%;
+    height: 150px; 
+    background: linear-gradient(45deg, hwb(245 17% 59% / 0.228), #30115ab6, #190531);  
+    z-index: -1;  
+    animation-duration: 8000ms;
 }
+
+.mohammad-img::before,
+.mohammad-img::after {
+    transition: all 0.5s;
+    animation-name: movingForwordBackword;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes movingForwordBackword {
+    0% {
+        right: -20%;
+    }
+    50% {
+        right: -60%;
+    }
+    100% {
+        right: -20%;
+
+    }  
+} 
   
+.socail {
+    background: black;
+}
