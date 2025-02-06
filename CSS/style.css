@@ -13,10 +13,6 @@
     font-family: "Space Mono", serif;
 }
 
-body {
-    /* overflow-x: hidden; */
-}
-
 header {
     z-index: 10;
     width: 100vw;

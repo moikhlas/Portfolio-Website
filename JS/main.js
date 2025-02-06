@@ -17,7 +17,7 @@ let rodFunction = (backgroundOne, durationOne,  backgroundTwo = '', durationTwo 
 let loadPageAnimetion = (callBack) => {
     let backgroundHeader = document.querySelector('.background-header');
     callBack('rgba(0, 0, 0, 0.7)', 150);
-    // backgroundHeader.style.zIndex = '1'
+    backgroundHeader.style.zIndex = '1'
 }
 
 loadPageAnimetion(rodFunction);
@@ -40,20 +40,6 @@ let regularAnimation = (callBack) => {
 setInterval(() => {
     regularAnimation(rodFunction); // Call regularAnimation with rodFunction as callback
 }, 5000);
-
-
-// let innerHtmlTextWriter = () => {
-//     let halloText = "Hi There!"
-//     let introText = "My Name is Mohammad"
-//     let writeHallo = document.querySelector('.hi-text');
-//     let writeIntro = document.querySelector('.into-moh');
-
-
-
-// }
-
-// innerHtmlTextWriter()
-
 
 let innerHtmlTextWriter = () => {
     let halloText = "Hi There!";
